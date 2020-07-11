@@ -19,7 +19,7 @@ class App extends React.Component{
   render(){
     let todos = this.state.todoList.map((item, index)=>{
       return (
-        <TodoItem todo={item}/>
+        <TodoItem todo={item} key={index} />
       )
     })
 

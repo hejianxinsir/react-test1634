@@ -4,8 +4,8 @@ export default class TodoInput extends React.Component {
 
   render(){
     return (
-      <div class="todoInput">
-        <input type="text" value={this.props.content}/>
+      <div className="todoInput">
+        <input type="text" default={this.props.content}/>
       </div>
     )
   }
