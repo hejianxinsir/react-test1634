@@ -17,3 +17,7 @@ ol,ul, li{
 
   box-shadow: 0 0 1em rgba(0,0,0,0.2);
 }
+
+.app > h1{
+  text-align: center;
+}
