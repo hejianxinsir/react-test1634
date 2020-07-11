@@ -26,12 +26,16 @@ class App extends React.Component{
     return (
       <div className="app">
         <h1>我的代办</h1>
-        <TodoInput content={this.state.newTodo}/>
+        <TodoInput content={this.state.newTodo} onSubmit={this.addTodo}/>
         <ol>
           {todos}
         </ol>
       </div>
     )
+  }
+
+  addTodo(){
+    console.log('我得添加一个 todo 了')
   }
 }
 
