@@ -4,9 +4,9 @@ import './TodoItem.css'
 export default class TodoItem extends Component{
   render(){
     return (
-      <li className="todoItem">
+      <div className="todoItem">
         {this.props.todo.title}
-      </li>
+      </div>
     )
   }
 }
