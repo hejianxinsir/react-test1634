@@ -20,7 +20,7 @@ class App extends React.Component{
     let todos = this.state.todoList.map((item, index)=>{
       return (
         <li key={index}>
-          <TodoItem todo={item}/>
+          <TodoItem todo={item} onToggle={this.toggle.bind(this)}/>
         </li>
       )
     })
@@ -29,7 +29,10 @@ class App extends React.Component{
     return (
       <div className="app">
         <h1>我的代办</h1>
-        <TodoInput content={this.state.newTodo} onSubmit={this.addTodo.bind(this)}/>
+        <TodoInput content={this.state.newTodo}
+            onSubmit={this.addTodo.bind(this)}
+            onChange={this.changeTitle.bind(this)}
+        />
         <ol>
           {todos}
         </ol>
@@ -51,6 +54,16 @@ class App extends React.Component{
       newTodo: '',
       todoList: this.state.todoList
     })
+  }
+  changeTitle(event){
+    this.setState({
+      newTodo: event.target.value,
+      todoList: this.state.todoList
+    })
+  }
+  toggle(e, todo){
+    todo.status = todo.status === 'completed' ? '' : 'completed'
+    this.setState(this.state)
   }
 }
 
