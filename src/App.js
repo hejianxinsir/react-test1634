@@ -46,18 +46,21 @@ class App extends React.Component{
 
   addTodo(event){
     console.log('我得添加一个 todo 了')
+    if(this.state.newTodo){
+      this.state.todoList.push({
+        id: idMaker(),
+        title: event.target.value,
+        status: null,
+        deleted: false
+      })
 
-    this.state.todoList.push({
-      id: idMaker(),
-      title: event.target.value,
-      status: null,
-      deleted: false
-    })
-
-    this.setState({
-      newTodo: '',
-      todoList: this.state.todoList
-    })
+      this.setState({
+        newTodo: '',
+        todoList: this.state.todoList
+      })
+    }else{
+      alert('请输入内容')
+    }
   }
   changeTitle(event){
     this.setState({
